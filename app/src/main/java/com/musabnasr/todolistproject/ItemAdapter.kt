@@ -1,6 +1,5 @@
 package com.musabnasr.todolistproject
 
-import android.graphics.Movie
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.TextView
@@ -22,8 +21,7 @@ class ListAdapter(private val list: List<Item>) : RecyclerView.Adapter<MovieView
 
 }
 
-class MovieViewHolder(inflater: LayoutInflater, parent: ViewGroup) :
-    RecyclerView.ViewHolder(inflater.inflate(R.layout.list_item, parent, false)) {
+class MovieViewHolder(inflater: LayoutInflater, parent: ViewGroup) : RecyclerView.ViewHolder(inflater.inflate(R.layout.list_item, parent, false)) {
 
     private var mTitleView: TextView? = null
 

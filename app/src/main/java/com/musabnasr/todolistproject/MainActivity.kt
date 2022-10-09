@@ -3,9 +3,12 @@ package com.musabnasr.todolistproject
 import android.content.ClipData
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.InputType
+import android.widget.EditText
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.appcompat.app.AlertDialog
 
 class MainActivity : AppCompatActivity() {
 
@@ -33,6 +36,7 @@ class MainActivity : AppCompatActivity() {
 
 
 
+
         val swipeToDeleteCallback = object : SwipeToDeleteCallback(){
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
                 val position = viewHolder.adapterPosition
@@ -48,5 +52,25 @@ class MainActivity : AppCompatActivity() {
 
 
     }
+
+   /* private fun addListItem() {
+        val dialogTitle = "Add New Task"
+        val positiveButtonTitle = "Add"
+        val negativeButtonTitle = "Cancel"
+        val builder = AlertDialog.Builder(this)
+        val newItemEditText = EditText(this)
+        newItemEditText.inputType = InputType.TYPE_CLASS_TEXT
+        builder.setTitle(dialogTitle)
+        builder.setView(newItemEditText)
+        builder.setPositiveButton(positiveButtonTitle) {
+                dialog, id -> itemList.add(newItemEditText.text.toString())
+            adapter.notifyDataSetChanged()
+        }
+        builder.setNegativeButton(negativeButtonTitle){
+                dialog, id -> dialog.cancel()
+        }
+        builder.create().show()
+    }*/
+
 }
 
